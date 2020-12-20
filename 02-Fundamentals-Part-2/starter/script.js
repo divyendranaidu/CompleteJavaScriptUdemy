@@ -32,7 +32,7 @@ const yearsUntilResurement = (birthYear, firstName) => {
 console.log(yearsUntilResurement(1991, 'Divyendra')); */
 
 //Coding challenge 2
-const calcAvg = scores => {
+/* const calcAvg = scores => {
     return (scores[0] + scores[1] + scores[2])/3;
 }
 function Team(name, scores) {
@@ -41,17 +41,34 @@ function Team(name, scores) {
     this.average = calcAvg(scores);
 }
 const dolphins = new Team('Dolphins', [44,23,71]);
-const koalas = new Team('Koalas', [44,44,44]);
+const koalas = new Team('Koalas', [1,2,2]);
 
 const checkWinner = function(avgDolphins, avgKoalas) {
     let winnerLog = `Nobody wins ${dolphins.name}(${avgDolphins}) v ${koalas.name} (${avgKoalas})`;
     if(avgDolphins !== avgKoalas) {
         if(avgDolphins >= avgKoalas * 2) {
-            winnerLog = `${dolphins.name} win (${avgDolphins} v ${avgKoalas})`;
+            winnerLog = `${dolphins.name} win 👑 (${avgDolphins} v ${avgKoalas})`;
         } else if(avgKoalas >= avgDolphins * 2) {
-            winnerLog = `${koalas.name} win (${avgKoalas} v ${avgDolphins})`;
+            winnerLog = `${koalas.name} win 👑 (${avgKoalas} v ${avgDolphins})`;
         }
     } return winnerLog;
 }
 const winnerLog = checkWinner(dolphins.average, koalas.average);
-console.log(winnerLog);
+console.log(winnerLog); */
+
+const calcTip = function(billAmount) {
+    const tipPercent = (billAmount >= 50 && billAmount <= 300)? 0.15 : 0.20;
+    return billAmount * tipPercent;
+}
+const bills = [100,100,100];
+const tips = [];
+const total = [];
+bills.forEach(bill => {
+    let tip = calcTip(bill)
+    tips.push(tip);
+    total.push(bill + tip);
+});
+
+console.log(`Bills = ${bills};
+Tips = ${tips};
+Total = ${total}`);
