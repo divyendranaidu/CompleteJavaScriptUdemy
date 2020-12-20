@@ -41,10 +41,10 @@ function Team(name, scores) {
     this.average = calcAvg(scores);
 }
 const dolphins = new Team('Dolphins', [44,23,71]);
-const koalas = new Team('Koalas', [1,2,3]);
+const koalas = new Team('Koalas', [44,44,44]);
 
 const checkWinner = function(avgDolphins, avgKoalas) {
-    let winnerLog;
+    let winnerLog = `Nobody wins ${dolphins.name}(${avgDolphins}) v ${koalas.name} (${avgKoalas})`;
     if(avgDolphins !== avgKoalas) {
         if(avgDolphins >= avgKoalas * 2) {
             winnerLog = `${dolphins.name} win (${avgDolphins} v ${avgKoalas})`;
